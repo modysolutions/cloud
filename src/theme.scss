@@ -1,3 +1,37 @@
-body {
-  color: var(--wp--preset--color--black);
+// Typography base reset
+// Anchors 1rem = 16px and prevents OS/plugin interference.
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// Baseline body defaults — design tokens resolve at runtime from theme.json.
+body {
+  font-family: var(--wp--preset--font-family--open-sans, 'Open Sans', sans-serif), serif;
+  font-size: var(--wp--preset--font-size--medium, 1rem);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Heading baseline — Montserrat for all h1-h6.
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif), serif;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.8rem; }

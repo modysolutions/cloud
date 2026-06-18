@@ -117,6 +117,13 @@ class App {
 			false;
 		return [
 			[
+				'handle' => 'mody-google-fonts',
+				'url' => 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap',
+				'deps' => null,
+				'ver' => null,
+				'media' => 'all'
+			],
+			[
 				'handle' => 'theme',
 				'url' => $theme ? home_url('/dist/theme.css') : '',
 				'ver' => $theme['version'] ?? 1,

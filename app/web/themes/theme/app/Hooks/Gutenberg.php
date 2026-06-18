@@ -32,6 +32,8 @@ class Gutenberg {
 		add_theme_support('responsive-embeds');
 		add_theme_support('appearance-tools');
 
+		// Load Google Fonts in the block editor for Open Sans and Montserrat.
+		add_editor_style('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 		add_editor_style('assets/css/editor-style.css');
 
 		// Keep editor suggestions focused on project-owned patterns.
