@@ -1,0 +1,41 @@
+server {
+    listen 80;
+    server_name $HOST_NAME;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name $HOST_NAME;
+
+    ssl_certificate /etc/nginx/ssl/cert.pem;
+    ssl_certificate_key /etc/nginx/ssl/key.pem;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    client_max_body_size 256M;
+
+    root /var/www/html;
+    index index.php index.html index.htm;
+
+    rewrite ^/(wp-admin|wp-includes)/(.*)$ /wp/$1/$2 last;
+    rewrite ^/(wp-[^/]+\.php|xmlrpc\.php)$ /wp/$1 last;
+    rewrite ^/wp-admin$ $scheme://$host$uri/ permanent;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_pass wordpress:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+
+        fastcgi_buffer_size 32k;
+        fastcgi_buffers 16 16k;
+        fastcgi_busy_buffers_size 64k;
+    }
+}
