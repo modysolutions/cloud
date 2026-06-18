@@ -10,9 +10,17 @@ class Gutenberg {
 
 	public function action() : void {
 		add_action('after_setup_theme', [ $this, 'after_setup_theme']);
+		add_action('init', [ $this, 'register_block_styles' ]);
 	}
 
 	public function filter() : void {}
+
+	public function register_block_styles() : void {
+		register_block_style( 'core/button', [
+			'name'  => 'secondary',
+			'label' => __( 'Secondary', 'theme' ),
+		] );
+	}
 
 	public function after_setup_theme() : void {
 		// Core FSE supports for template and editor parity.

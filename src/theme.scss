@@ -1,9 +1,10 @@
 // Typography base reset
 // Anchors 1rem = 16px and prevents OS/plugin interference.
 html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
+
+  font-size: 100%;
+  text-size-adjust: 100%;
 }
 
 *,
@@ -23,10 +24,11 @@ body {
 
 // Heading baseline — Montserrat for all h1-h6.
 h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+
   font-family: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif), serif;
   font-weight: 600;
   line-height: 1.1;
-  margin-top: 0;
 }
 
 h1 { font-size: 2.5rem; }
@@ -35,3 +37,31 @@ h3 { font-size: 1.6rem; }
 h4 { font-size: 1.25rem; }
 h5 { font-size: 1rem; }
 h6 { font-size: 0.8rem; }
+
+// Accordion — core/details block
+// summary = heading trigger: skobeloff bg, cultured text
+// Content area inherits block-level cultured bg + dark-charcoal from theme.json
+.wp-block-details {
+  color: var(--wp--preset--color--dark-charcoal);
+
+  background-color: var(--wp--preset--color--cultured);
+
+  summary {
+    display: list-item;
+    padding: 0.875rem 1.25rem;
+
+    font-family: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--wp--preset--color--cultured);
+
+    background-color: var(--wp--preset--color--skobeloff);
+    cursor: pointer;
+    list-style-position: inside;
+
+    &::marker {
+      color: var(--wp--preset--color--cultured);
+    }
+  }
+}
