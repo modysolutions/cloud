@@ -21,34 +21,139 @@
 			"link": true,
 			"palette": [
 				{
-					"color": "#3c3c3c",
-					"name": "Primary",
-					"slug": "primary"
+					"color": "#005F6B",
+					"name": "Skobeloff",
+					"slug": "skobeloff"
 				},
 				{
-					"color": "#033d54",
-					"name": "Secondary",
-					"slug": "secondary"
+					"color": "#333333",
+					"name": "Dark Charcoal",
+					"slug": "dark-charcoal"
 				},
 				{
-					"color": "#033d54",
-					"name": "Tertiary",
-					"slug": "tertiary"
+					"color": "#F5F5F5",
+					"name": "Cultured",
+					"slug": "cultured"
 				},
 				{
-					"color": "#3c768b",
-					"name": "Accent 1",
-					"slug": "accent-1"
+					"color": "#B50BA4",
+					"name": "Bright Purple",
+					"slug": "bright-purple"
 				},
 				{
-					"color": "#3e5383",
-					"name": "Accent 2",
-					"slug": "accent-2"
+					"color": "#01110A",
+					"name": "Midnight Moss",
+					"slug": "midnight-moss"
 				},
 				{
-					"color": "#d17030",
-					"name": "Accent 3",
-					"slug": "accent-3"
+					"color": "#000000",
+					"name": "Black",
+					"slug": "black"
+				},
+				{
+					"color": "#ffffff",
+					"name": "White",
+					"slug": "white"
+				},
+				{
+					"color": "#005F6B",
+					"name": "Green 900",
+					"slug": "green-900"
+				},
+				{
+					"color": "#1A6F7A",
+					"name": "Green 800",
+					"slug": "green-800"
+				},
+				{
+					"color": "#337F89",
+					"name": "Green 700",
+					"slug": "green-700"
+				},
+				{
+					"color": "#4D8F97",
+					"name": "Green 600",
+					"slug": "green-600"
+				},
+				{
+					"color": "#669FA6",
+					"name": "Green 500",
+					"slug": "green-500"
+				},
+				{
+					"color": "#80AFB5",
+					"name": "Green 400",
+					"slug": "green-400"
+				},
+				{
+					"color": "#99BFC4",
+					"name": "Green 300",
+					"slug": "green-300"
+				},
+				{
+					"color": "#B3CFD3",
+					"name": "Green 200",
+					"slug": "green-200"
+				},
+				{
+					"color": "#CCDFE1",
+					"name": "Green 100",
+					"slug": "green-100"
+				},
+				{
+					"color": "#E6EFF0",
+					"name": "Green 50",
+					"slug": "green-50"
+				},
+				{
+					"color": "#B50BA4",
+					"name": "Purple 900",
+					"slug": "purple-900"
+				},
+				{
+					"color": "#BC23AD",
+					"name": "Purple 800",
+					"slug": "purple-800"
+				},
+				{
+					"color": "#C43CB6",
+					"name": "Purple 700",
+					"slug": "purple-700"
+				},
+				{
+					"color": "#CB54BF",
+					"name": "Purple 600",
+					"slug": "purple-600"
+				},
+				{
+					"color": "#D36DC8",
+					"name": "Purple 500",
+					"slug": "purple-500"
+				},
+				{
+					"color": "#DA85D2",
+					"name": "Purple 400",
+					"slug": "purple-400"
+				},
+				{
+					"color": "#E19DDB",
+					"name": "Purple 300",
+					"slug": "purple-300"
+				},
+				{
+					"color": "#E9B6E4",
+					"name": "Purple 200",
+					"slug": "purple-200"
+				},
+				{
+					"color": "#F0CEED",
+					"name": "Purple 100",
+					"slug": "purple-100"
+				},
+				{
+					"color": "#F8E7F6",
+					"name": "Purple 50",
+					"slug": "purple-50"
 				}
 			],
 			"text": true
@@ -2151,14 +2256,14 @@
 			"width": ""
 		},
 		"color": {
-			"background": "#ffffff",
+			"background": "#F5F5F5",
 			"gradient": "",
-			"text": "var(--wp--preset--color--primary)"
+			"text": "var(--wp--preset--color--dark-charcoal)"
 		},
 		"elements": {
 			"button": {
 				"color": {
-					"background": "var(--wp--preset--color--accent-3)",
+					"background": "var(--wp--preset--color--primary)",
 					"text": "#ffffff"
 				},
 				"typography": {
@@ -2192,7 +2297,7 @@
 			},
 			"heading": {
 				"color": {
-					"text": "var(--wp--preset--color--secondary)"
+					"text": "var(--wp--preset--color--midnight-moss)"
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--bitter)",
@@ -2204,7 +2309,7 @@
 			"link": {
 				"border": [],
 				"color": {
-					"text": "var(--wp--preset--color--accent-1)"
+					"text": "var(--wp--preset--color--primary)"
 				},
 				"spacing": [],
 				"typography": {

@@ -1,5 +1,5 @@
-import './app.scss';
+import './theme.scss';
 
-window.addEventListener( 'load', () => {} );
+window.addEventListener('load', () => {});
 
-document.addEventListener( 'DOMContentLoaded', () => {} );
+document.addEventListener('DOMContentLoaded', () => {});
