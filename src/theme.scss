@@ -1,10 +1,9 @@
 // Typography base reset
 // Anchors 1rem = 16px and prevents OS/plugin interference.
 html {
-  box-sizing: border-box;
-
   font-size: 100%;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
 }
 
 *,
@@ -15,7 +14,7 @@ html {
 
 // Baseline body defaults — design tokens resolve at runtime from theme.json.
 body {
-  font-family: var(--wp--preset--font-family--open-sans, 'Open Sans', sans-serif), serif;
+  font-family: var(--wp--preset--font-family--open-sans, 'Open Sans', sans-serif);
   font-size: var(--wp--preset--font-size--medium, 1rem);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -24,11 +23,10 @@ body {
 
 // Heading baseline — Montserrat for all h1-h6.
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-
-  font-family: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif), serif;
+  font-family: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif);
   font-weight: 600;
   line-height: 1.1;
+  margin-top: 0;
 }
 
 h1 { font-size: 2.5rem; }
@@ -42,22 +40,19 @@ h6 { font-size: 0.8rem; }
 // summary = heading trigger: skobeloff bg, cultured text
 // Content area inherits block-level cultured bg + dark-charcoal from theme.json
 .wp-block-details {
-  color: var(--wp--preset--color--dark-charcoal);
-
   background-color: var(--wp--preset--color--cultured);
+  color: var(--wp--preset--color--dark-charcoal);
 
   summary {
     display: list-item;
-    padding: 0.875rem 1.25rem;
-
-    font-family: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif);
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--wp--preset--color--cultured);
-
     background-color: var(--wp--preset--color--skobeloff);
+    color: var(--wp--preset--color--cultured);
     cursor: pointer;
+    padding: 0.875rem 1.25rem;
+    font-family: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
     list-style-position: inside;
 
     &::marker {

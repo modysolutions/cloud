@@ -1,13 +1,18 @@
-<!-- wp:template-part {"slug":"header","theme":"theme"} /-->
+<!-- wp:template-part {"slug":"header","theme":"theme","tagName":"header"} /-->
 
-<!-- wp:uagb/container {"block_id":"0ef4adbe","directionDesktop":"row","variationSelected":true,"isBlockRootParent":true} -->
-<div class="wp-block-uagb-container uagb-block-0ef4adbe alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap"><!-- wp:uagb/container {"block_id":"65b10b1a","widthDesktop":50,"widthSetByUser":true} -->
-	<div class="wp-block-uagb-container uagb-block-65b10b1a"><!-- wp:template-part {"slug":"sidebar","theme":"theme","area":"uncategorized"} /--></div>
-	<!-- /wp:uagb/container -->
+<!-- =============================================================
+     MAIN AREA — fullwidth outer, 1160px-constrained inner
+     Left: sidebar ~25% | Right: content ~75%
+     ============================================================= -->
 
-	<!-- wp:uagb/container {"block_id":"35b3169a","widthDesktop":50,"widthSetByUser":true} -->
-	<div class="wp-block-uagb-container uagb-block-35b3169a"><!-- wp:post-content /--></div>
-	<!-- /wp:uagb/container --></div></div>
+<!-- wp:uagb/container {"block_id":"b1c2d3e4","htmlTag":"main","innerContentCustomWidthDesktop":1160,"directionDesktop":"row","alignItemsDesktop":"stretch","variationSelected":true,"columnGapDesktop":0,"isBlockRootParent":true,"equalHeight":true} -->
+<main class="wp-block-uagb-container uagb-block-b1c2d3e4 alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap"><!-- wp:uagb/container {"block_id":"b1c2d3e5","htmlTag":"aside","widthDesktop":25,"alignItemsDesktop":"stretch","variationSelected":true,"widthSetByUser":true,"equalHeight":true} -->
+    <aside class="wp-block-uagb-container uagb-block-b1c2d3e5"><!-- wp:template-part {"slug":"sidebar","theme":"theme","area":"uncategorized"} /--></aside>
+    <!-- /wp:uagb/container -->
+
+    <!-- wp:uagb/container {"block_id":"b1c2d3e6","widthDesktop":75,"variationSelected":true,"widthSetByUser":true} -->
+    <div class="wp-block-uagb-container uagb-block-b1c2d3e6"><!-- wp:post-content /--></div>
+    <!-- /wp:uagb/container --></div></main>
 <!-- /wp:uagb/container -->
 
-<!-- wp:template-part {"slug":"footer","theme":"theme"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"theme","tagName":"footer"} /-->
