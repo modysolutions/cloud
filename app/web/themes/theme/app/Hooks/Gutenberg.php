@@ -10,17 +10,10 @@ class Gutenberg {
 
 	public function action() : void {
 		add_action('after_setup_theme', [ $this, 'after_setup_theme']);
-		add_action('init', [ $this, 'register_block_styles' ]);
+		add_action('enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets']);
 	}
 
 	public function filter() : void {}
-
-	public function register_block_styles() : void {
-		register_block_style( 'core/button', [
-			'name'  => 'secondary',
-			'label' => __( 'Secondary', 'theme' ),
-		] );
-	}
 
 	public function after_setup_theme() : void {
 		// Core FSE supports for template and editor parity.
@@ -40,11 +33,27 @@ class Gutenberg {
 		add_theme_support('responsive-embeds');
 		add_theme_support('appearance-tools');
 
-		// Load Google Fonts in the block editor for Open Sans and Montserrat.
-		add_editor_style('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 		add_editor_style('assets/css/editor-style.css');
 
 		// Keep editor suggestions focused on project-owned patterns.
 		remove_theme_support('core-block-patterns');
+	}
+
+	public function enqueue_block_editor_assets() : void {
+		$asset_path = \ABSPATH.'/../dist/theme.asset.php';
+		$style_path = \ABSPATH.'/../dist/theme.css';
+
+		if (! file_exists($asset_path) || ! file_exists($style_path)) {
+			return;
+		}
+
+		$asset = include $asset_path;
+
+		wp_enqueue_style(
+			'theme-editor',
+			home_url('/dist/theme.css'),
+			[],
+			$asset['version'] ?? filemtime($style_path)
+		);
 	}
 }

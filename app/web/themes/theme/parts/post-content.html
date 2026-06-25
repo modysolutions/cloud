@@ -1,0 +1,29 @@
+<!-- Full post content — rendered for logged-in users.
+     Swapped in by the default slug "post-content" when is_user_logged_in() returns true.
+     For anonymous users App\Hooks\Visibility loads post-content-anonymous.html instead. -->
+
+<!-- Post title -->
+<!-- wp:post-title {"level":1,"isLink":false} /-->
+
+<!-- Featured image -->
+<!-- wp:post-featured-image {"isLink":false} /-->
+
+<!-- Post meta: date + author -->
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-group">
+	<!-- wp:post-date /-->
+	<!-- wp:post-author {"showAvatar":false,"showBio":false} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- Post body -->
+<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+
+<!-- Taxonomy terms: categories + tags -->
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"2rem"}}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group">
+	<!-- wp:post-terms {"term":"category"} /-->
+	<!-- wp:post-terms {"term":"post_tag","separator":" · "} /-->
+</div>
+<!-- /wp:group -->
+

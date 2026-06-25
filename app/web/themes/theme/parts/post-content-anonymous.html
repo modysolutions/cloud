@@ -1,0 +1,49 @@
+<!-- Content gate — rendered for anonymous (non-logged-in) visitors.
+     Swapped in by App\Hooks\Visibility when is_user_logged_in() returns false.
+     Replace with parts/post-content.html once the user authenticates. -->
+
+<!-- Post title is always visible as a teaser -->
+<!-- wp:post-title {"level":1,"isLink":false} /-->
+
+<!-- Blurred excerpt teaser -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5rem","bottom":"1.5rem"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group">
+	<!-- wp:post-excerpt {"moreText":"","excerptLength":40} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- Gate notice -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group">
+
+	<!-- wp:heading {"level":3,"textAlign":"center"} -->
+	<h3 class="wp-block-heading has-text-align-center">🔒 This content is for members only</h3>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"align":"center"} -->
+	<p class="has-text-align-center">Log in or create a free account to read the full article.</p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap"}} -->
+	<div class="wp-block-buttons">
+
+		<!-- wp:button -->
+		<div class="wp-block-button">
+			<a class="wp-block-button__link wp-element-button" href="/wp/wp-login.php">Log In</a>
+		</div>
+		<!-- /wp:button -->
+
+		<!-- wp:button {"className":"is-style-outline"} -->
+		<div class="wp-block-button is-style-outline">
+			<a class="wp-block-button__link wp-element-button" href="/wp/wp-login.php?action=register">Create Account</a>
+		</div>
+		<!-- /wp:button -->
+
+	</div>
+	<!-- /wp:buttons -->
+
+	<!-- wp:loginout /-->
+
+</div>
+<!-- /wp:group -->
+

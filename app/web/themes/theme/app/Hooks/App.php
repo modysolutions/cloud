@@ -69,18 +69,16 @@ class App {
 	}
 
 	private function scripts(): array {
-		$theme = file_exists( \ABSPATH . '/../dist/theme.asset.php' )
-			? include( \ABSPATH . '/../dist/theme.asset.php' )
-			: false;
-
+		$theme = file_exists(\ABSPATH.'/../dist/theme.asset.php') ? include(\ABSPATH.'/../dist/theme.asset.php') :
+			false;
 		return [
 			[
 				'handle' => 'theme',
-				'url'    => $theme ? home_url( '/dist/theme.js' ) : '',
-				'ver'    => is_array( $theme ) ? ( $theme['version'] ?? null ) : null,
-				'deps'   => is_array( $theme ) ? ( $theme['dependencies'] ?? [] ) : [],
-				'args'   => [ 'in_footer' => true ],
-			],
+				'url' => $theme ? home_url('/dist/theme.js') : '',
+				'ver' => $theme['version'] ?? 1,
+				'deps' => $theme['dependencies'] ?? [],
+				'args' => ['in_footer' => false]
+			]
 		];
 	}
 
@@ -115,25 +113,17 @@ class App {
 	}
 
 	private function styles(): array {
-		$theme = file_exists( \ABSPATH . '/../dist/theme.asset.php' )
-			? include( \ABSPATH . '/../dist/theme.asset.php' )
-			: false;
-
+		$theme = file_exists(\ABSPATH.'/../dist/theme.asset.php') ? include(\ABSPATH.'/../dist/theme.asset.php') :
+			false;
+		$style_path = \constant('APP_THEME_DIR').'/style.css';
 		return [
 			[
-				'handle' => 'mody-google-fonts',
-				'url'    => 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap',
-				'deps'   => [],
-				'ver'    => null,
-				'media'  => 'all',
-			],
-			[
 				'handle' => 'theme',
-				'url'    => $theme ? home_url( '/dist/theme.css' ) : '',
-				'ver'    => is_array( $theme ) ? ( $theme['version'] ?? null ) : null,
-				'deps'   => [ 'mody-google-fonts' ],
-				'media'  => 'all',
-			],
+				'url' => $theme ? home_url('/dist/theme.css') : get_stylesheet_directory_uri().'/style.css',
+				'ver' => $theme['version'] ?? filemtime($style_path),
+				'deps' => null,
+				'media' => 'all'
+			]
 		];
 	}
 
