@@ -35,7 +35,7 @@ class Visibility {
 
 		// 2. Only act on the specific "post-content" slug.
 		if ( ( $parsed_block['attrs']['slug'] ?? '' ) !== 'post-content' ) {
-//			return $parsed_block;
+			return $parsed_block;
 		}
 
 		// 3. Only act on single post views.
@@ -43,7 +43,6 @@ class Visibility {
 			return $parsed_block;
 		}
 
-		wp_die(print_r($parsed_block, true));
 		// 4. Logged-in users always see the full content — nothing to swap.
 		if ( is_user_logged_in() ) {
 			return $parsed_block;
