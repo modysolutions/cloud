@@ -1,0 +1,105 @@
+@use 'variables' as *;
+
+// ─── Level-3 mega-menu panel ──────────────────────────────────────────────────
+
+.wp-block-mody-mega-panel,
+.mody-mega-panel {
+  // Desktop: absolutely positioned to the right of the sidebar
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: $mody-mega-panel-z;
+
+  min-width: 240px;
+  padding: 1.25rem;
+
+  background-color: var(--wp--preset--color--cultured);
+  border: 1px solid var(--wp--preset--color--green-100);
+  box-shadow: 2px 4px 16px rgb(0 0 0 / 10%);
+
+  &[hidden] { display: none; }
+
+  // ── Width variants ──────────────────────────────────────────────────────────
+
+  &--width-full {
+    right: 0;
+    left: 0;
+
+    width: 100vw;
+  }
+
+  &--width-container {
+    width: 1160px;
+    max-width: 100vw;
+  }
+
+  // ── Layout variants ─────────────────────────────────────────────────────────
+
+  &--layout-two-column {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &--layout-three-column {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &--layout-featured {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  // Column headings inside the mega-panel
+  h6 {
+    margin: 0 0 0.5rem;
+
+    font-family: var(--wp--preset--font-family--montserrat, 'Montserrat', sans-serif), sans-serif;
+    font-size: var(--wp--preset--font-size--small, 0.875rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--midnight-moss);
+  }
+
+  // Links inside the mega-panel
+  a {
+    display: block;
+    padding: 0.25rem 0;
+
+    font-size: var(--wp--preset--font-size--small, 0.875rem);
+    text-decoration: none;
+    color: var(--wp--preset--color--dark-charcoal);
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      color: var(--wp--preset--color--skobeloff);
+    }
+  }
+}
+
+// ── Mobile: no absolute positioning ───────────────────────────────────────────
+
+@media (max-width: #{$mody-breakpoint-mobile - 1px}) {
+  .mody-mega-panel {
+    position: static;
+
+    width: auto;
+    min-width: 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+
+    border: none;
+    box-shadow: none;
+
+    &--layout-two-column,
+    &--layout-three-column,
+    &--layout-featured {
+      display: block; // stack columns vertically
+    }
+  }
+}
+

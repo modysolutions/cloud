@@ -1,0 +1,95 @@
+@use 'variables' as *;
+
+// ─── Mobile modal overlay ─────────────────────────────────────────────────────
+
+.mody-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: $mody-modal-z;
+
+  display: flex;
+
+  // Semi-transparent backdrop
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+
+    background-color: color-mix(in srgb, var(--wp--preset--color--midnight-moss) 60%, transparent);
+    cursor: pointer;
+  }
+
+  // Slide-in drawer panel
+  &__inner {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    width: min(#{$mody-sidebar-width}, 85vw);
+    height: 100%;
+    padding: 1.25rem;
+
+    background-color: var(--wp--preset--color--cultured);
+
+    // Scrollbar styling (WebKit)
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--wp--preset--color--green-200);
+      border-radius: 2px;
+    }
+  }
+
+  // Close (×) button at the top of the drawer
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--wp--preset--color--dark-charcoal);
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+
+    &::before { content: '×'; }
+
+    &:hover,
+    &:focus-visible {
+      color: var(--wp--preset--color--skobeloff);
+
+      outline: 2px solid var(--wp--preset--color--skobeloff);
+      outline-offset: 2px;
+    }
+  }
+
+  // Inside the modal, reset mega-panel positioning and submenu indenting
+  .mody-mega-panel {
+    position: static;
+
+    width: auto;
+    min-width: 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+
+    border: none;
+    box-shadow: none;
+
+    &--layout-two-column,
+    &--layout-three-column,
+    &--layout-featured {
+      display: block;
+    }
+  }
+}
+

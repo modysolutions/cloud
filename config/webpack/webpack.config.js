@@ -32,6 +32,11 @@ const patchedRules = defaults.module.rules.map((rule) => {
 
 module.exports = {
     ...defaults,
+    output: {
+        ...defaults.output,
+        path: path.resolve(process.cwd(), 'app', 'dist'),
+        filename: '[name].js',
+    },
     plugins: [
         ...(defaults.plugins || []),
         new StylelintWebpackPlugin({
@@ -42,8 +47,10 @@ module.exports = {
         }),
     ],
     entry: {
-        theme: path.resolve(process.cwd(), 'src', 'theme.js'),
-        plugins: path.resolve(process.cwd(), 'src', 'plugins.js'),
+        theme:          path.resolve(process.cwd(), 'src', 'theme.js'),
+        plugins:        path.resolve(process.cwd(), 'src', 'plugins.js'),
+        mody:           path.resolve(process.cwd(), 'src', 'plugins', 'mody', 'index.js'),
+        'mody-frontend': path.resolve(process.cwd(), 'src', 'plugins', 'mody', 'frontend.js'),
     },
     module: {
         ...defaults.module,

@@ -4,7 +4,7 @@
 
 app/auth.json
 app/dumps/*
-app/logs/*
+**/logs/*
 app/vendor/*
 app/web/.htaccess
 app/web/advanced-cache.php
@@ -30,6 +30,8 @@ backups
 **/*/dist
 
 config/ssl/*
+
+tickets
 
 node_modules
 

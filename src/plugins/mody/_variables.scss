@@ -1,0 +1,11 @@
+// Mody sidebar navigation — SCSS design tokens.
+// All values reference theme.json CSS custom properties where applicable.
+// Hardcoded values are structural/layout only (no colours, no typography).
+
+$mody-breakpoint-mobile: 1024px;
+$mody-sidebar-width: 280px;
+$mody-transition-speed: 0.2s;
+$mody-transition-ease: ease;
+$mody-mega-panel-z: 100;
+$mody-modal-z: 1000;
+

@@ -59,6 +59,7 @@
     "start": "pnpm run lint:js && pnpm run lint:scss && pnpm run start:theme",
     "start:theme": "wp-scripts start --webpack-src-dir=src --output-path=app/dist --config=config/webpack/webpack.config.js",
     "lint:js": "eslint 'src/**/*.js'",
+    "lint:js:fix": "eslint 'src/**/*.js' --fix",
     "lint:scss": "stylelint 'src/**/*.scss' --fix",
     "lint:scss:ci": "stylelint 'src/**/*.scss'"
   }

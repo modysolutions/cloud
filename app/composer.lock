@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6875c5ccb6b84c829c35b2c2a45a1edd",
+    "content-hash": "15f8ddc34c83e49fe9d19b7f7d1d0cc3",
     "packages": [
         {
             "name": "composer/installers",
@@ -151,6 +151,27 @@
                 }
             ],
             "time": "2024-06-24T20:46:46+00:00"
+        },
+        {
+            "name": "mody/advanced-custom-fields-pro",
+            "version": "6.6.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://plugins.mody.cloud/satispress/advanced-custom-fields-pro/6.6.2",
+                "shasum": "bca71b99eca1ddae5101e780972abb70a59987ee"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": [
+                {
+                    "name": "WP Engine",
+                    "homepage": "https://wpengine.com/?utm_source=wordpress.org&#038;utm_medium=referral&#038;utm_campaign=plugin_directory&#038;utm_content=advanced_custom_fields"
+                }
+            ],
+            "description": "Customize WordPress with powerful, professional and intuitive fields.",
+            "homepage": "https://www.advancedcustomfields.com"
         },
         {
             "name": "symfony/deprecation-contracts",

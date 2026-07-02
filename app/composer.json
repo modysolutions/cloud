@@ -4,7 +4,8 @@
     "description": "WordPress Sites",
     "autoload": {
         "psr-4": {
-            "App\\": "web/themes/theme/app"
+            "App\\": "web/themes/theme/app",
+            "Mody\\": "web/plugins/mody/app"
         }
     },
     "authors": [
@@ -12,13 +13,19 @@
             "name": "Mody Solutions"
         }
     ],
-    "repositories": {
-        "wpackagist": {
+    "repositories": [
+        {
+            "name": "satispress",
+            "type": "composer",
+            "url": "https://plugins.mody.cloud/satispress/"
+        },
+        {
+            "name": "wpackagist",
             "type": "composer",
             "url": "https://wpackagist.org",
             "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
         }
-    },
+    ],
     "require": {
         "wpackagist-plugin/wordpress-seo": "26.8",
         "wpackagist-plugin/ewww-image-optimizer": "8.3.1",
@@ -28,7 +35,8 @@
         "wpackagist-plugin/smart-phone-field-for-gravity-forms": "2.2.0",
         "wpackagist-plugin/ultimate-addons-for-gutenberg": "2.19.26",
         "timber/timber": "^2.0",
-        "wpackagist-theme/twentytwentyfive": "^1.5"
+        "wpackagist-theme/twentytwentyfive": "^1.5",
+        "mody/advanced-custom-fields-pro": "6.6.2"
     },
     "require-dev": {
         "wpackagist-plugin/query-monitor": "3.20.2",

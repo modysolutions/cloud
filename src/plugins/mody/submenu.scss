@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+// ─── Level-2 submenu panel ────────────────────────────────────────────────────
+
+.wp-block-mody-submenu,
+.mody-submenu {
+  margin: 0;
+  padding: 0 0 0 1rem; // indent L2 items under their L1 parent
+
+  list-style: none;
+
+  // Items inside the submenu get a slightly smaller font
+  .mody-item__link {
+    padding: 0.4rem 0.75rem;
+
+    font-size: var(--wp--preset--font-size--small, 0.875rem);
+    color: var(--wp--preset--color--dark-charcoal);
+  }
+}
+

@@ -49,7 +49,6 @@
 
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "indent": ["error", "tab"],
     "object-curly-spacing": ["error", "always"],
     "space-before-blocks": ["error", "always"],
     "keyword-spacing": ["error", { "before": true, "after": true }],
